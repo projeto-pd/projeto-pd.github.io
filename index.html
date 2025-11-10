@@ -18,7 +18,7 @@
             </div>
             <div class="col-6 text-white text-center">
                 <h1>Universidade Federal do ABC</h1>
-                <h2>As pontes de kfosdkfs</h2>
+                <h2>As pontes de Königsberg</h2>
             </div>
         </div>
     </div>
@@ -26,15 +26,20 @@
     <!--MAIN CONTAINER-->
     <div class="container p-3">
         <div class="row justify-content-center">
-            <div class="p-2 col-sm-12 col-md-8 col-lg-6 bg-secondary-subtle">
+            <div class="p-2 col-sm-12 col-md-8 col-lg-7 bg-white">
                 <h1 class="text-center">Coisa a respeito</h1>
-                <p class="text-start">
+                <p>
                 <a href="#sidebar" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. Vestibulum viverra sit amet tortor id interdum. Sed congue mi et aliquam aliquam. Pellentesque pulvinar quam efficitur nisl elementum tempus. Sed pellentesque varius est molestie feugiat. Aliquam dapibus eget erat et accumsan. Maecenas sit amet pharetra nisi. Pellentesque semper ante quis est volutpat, vitae elementum urna ornare. Nullam a quam non nisi semper tempor id vel orci. Maecenas placerat sapien pharetra, venenatis ex et, gravida libero. Ut tristique laoreet est sit amet iaculis. Curabitur ultrices vestibulum viverra. Vestibulum lacus mauris, fringilla et felis ut, interdum placerat ante. Nullam et dui sit amet ante consequat eleifend.
-                Ut urna tellus, lobortis sed purus id, imperdiet malesuada nisi. Phasellus leo nibh, dapibus non euismod at, ultricies a metus. Nulla luctus placerat felis ac aliquet. Integer vitae vehicula lorem. Donec tempor scelerisque neque, elementum interdum felis hendrerit nec. Phasellus quam arcu, sodales quis urna at, rutrum accumsan nisi. Nullam et est vitae magna laoreet semper sed quis purus. Morbi et pretium nunc, id viverra sem. Suspendisse gravida est eget neque tempor, ut egestas nisi sollicitudin. Fusce volutpat ultrices diam, nec vulputate tortor placerat a. Maecenas pellentesque sagittis dapibus. Nam imperdiet, felis eget pharetra auctor, velit nisl egestas massa, vel elementum mi dolor eget sapien. Sed eget ante bibendum sapien vulputate cursus. Aenean malesuada congue dui, quis suscipit ex ullamcorper pretium. Phasellus maximus mauris sed diam auctor viverra ac ut ligula.
                 </p>
-                <figure>
-                    <img src="./assets/squirelAndNikki.png" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pretty Nikki and Squirels</figcaption>
+                <p class="bg-secondary-subtle px-3">
+                <b>Definição 1.1:</b> Um <b><a href="#grafo" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">Grafo</a></b> é definido pelo seu conjunto de vértices (pontos) e seu conjunto de arestas (ligações) entre os vértices. Formalmente escreve-se que um grafo G é o par ordenado G=(V, E) onde V é o conjunto de vértices e E é o conjunto de arestas; Visto que as arestas são pares distintos de vértices diz-se que E \(\subset \binom{|V|}{2} \), isto é, E é alguma parte das combinações dos pontos de V escolhidos dois a dois.
+                </p>
+                <p>
+                Donec tempor scelerisque neque, elementum interdum felis hendrerit nec. Phasellus quam arcu, sodales quis urna at, rutrum accumsan nisi. Nullam et est vitae magna laoreet semper sed quis purus. Morbi et pretium nunc, id viverra sem. Suspendisse gravida est eget neque tempor, ut egestas nisi sollicitudin. Fusce volutpat ultrices diam, nec vulputate tortor placerat a. Maecenas pellentesque sagittis dapibus. Nam imperdiet, felis eget pharetra auctor, velit nisl egestas massa, vel elementum mi dolor eget sapien. Sed eget ante bibendum sapien vulputate cursus. Aenean malesuada congue dui, quis suscipit ex ullamcorper pretium. Phasellus maximus mauris sed diam auctor viverra ac ut ligula.
+                </p>
+                <figure class="text-center">
+                    <img src="./assets/Konigsberg_colour.jpg" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg</figcaption>
                 </figure>
                 <p>
                 Nulla vel leo et sapien accumsan congue eu sed neque. Aliquam a arcu sodales quam dictum interdum eget sed tellus. Phasellus in erat et metus luctus pretium. Morbi tempor tincidunt interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eu ultricies orci. Nulla ultrices gravida tincidunt. Vivamus eros tortor, venenatis eu porta id, pulvinar vitae dui. Suspendisse vulputate, nisi mattis convallis convallis, nisi libero aliquam odio, non volutpat mauris dolor tempor orci. Vivamus mi nisl, varius in odio nec, tempus ornare justo. Fusce in venenatis magna. Etiam aliquet arcu non arcu vehicula hendrerit.
@@ -91,6 +96,29 @@
             <p>
             It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
             </p>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="grafo" aria-labelledby="grafo-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="grafo-label">Grafos</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>
+            Aqui estão alguns exemplos visuais de grafos, aqui os vértices foram identificados pelos números de 1 à 4 podendo se dizer que os números são os vértices. Perceba que para o grafo não importa caso a representações de suas arestas se cruzem, mantenha em mente bem claro que as ligações são apenas entre pares de vértices. Tente justificar por conta própria que os exemplos 1 e 3 são, na verdade, o mesmo grafo só que desenhados de maneira diferente!
+            </p>
+            <figure class="text-center">
+                <img src="./assets/Grafos.drawio.png" class="img-fluid mt-2 mb-4">
+                <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Grafos</figcaption>
+            </figure>
+            <p>
+            Agora grafos tem suas devidas restrições: Nenhuma aresta pode partir e terminar no mesmo ponto, isso chamamos de laço; Entre dois vértices há <b>no máximo</b> uma aresta, ou seja, não pode ter duas ou mais arestas entre o mesmo par de vértices, isso é devido à forma como o conjunto de arestas é definido como combinações então identificamos pares iguais à mesma aresta. Mas como sempre se cria excessões a estas regras, o problema estudado por Euler que veremos em breve é um exemplo no qual a segunda "regra" é violada. Abaixo exemplos de coisas que não se adequam à definição de grafo apresentada:
+            </p>
+            <figure class="text-center">
+                <img src="./assets/NaoGrafos.drawio.png" class="img-fluid mt-2 mb-4">
+                <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Não-Grafos</figcaption>
+            </figure>
         </div>
     </div>
     <!--BOOTSTRAP 5 JS-->
