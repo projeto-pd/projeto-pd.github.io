@@ -1,24 +1,61 @@
 <html>
-<head>
 
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--BOOTSTRAP 5 CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    
+    <title>As Pontes de Königsberg</title>
     <!--MathJax, Latex in HTML-->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
+
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background: #f2f2f2;
+        }
+
+        #cy {
+            width: 70%;
+            height: 40vh;
+            display: block;
+            margin: 15px auto;
+        }
+
+        #resetBtn {
+            position: absolute;
+            margin: 15px 15px;
+            font-size: 24px;
+            border: none;
+            background: violet;
+            border-radius: 6px;
+            padding: 4px 10px;
+            cursor: pointer;
+        }
+
+        #container {
+            position: relative;
+            margin: 0 auto;
+        }
+    </style>
 </head>
+
 <body>
     <!-- Header Decor-->
     <div class="container-fluid py-3" style="background-color: #066017;">
         <div class="row justify-content-center align-items-center">
             <div class="col-2 d-none d-md-block">
-                <img src="https://www.ufabc.edu.br/images/conteudo/logo2.png" alt="Universidade Federal do ABC" class="img-fluid"/>
+                <img src="https://www.ufabc.edu.br/images/conteudo/logo2.png" alt="Universidade Federal do ABC"
+                    class="img-fluid" />
             </div>
             <div class="col-6 text-white text-center">
                 <h1>Universidade Federal do ABC</h1>
-                <h2>As pontes de Königsberg</h2>
+                <h2>As Pontes de Königsberg</h2>
             </div>
         </div>
     </div>
@@ -29,44 +66,235 @@
             <div class="p-2 col-sm-12 col-md-8 col-lg-7 bg-white">
                 <h1 class="text-center">Coisa a respeito</h1>
                 <p>
-                <a href="#sidebar" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">Lorem ipsum</a> dolor sit amet, consectetur adipiscing elit. Vestibulum viverra sit amet tortor id interdum. Sed congue mi et aliquam aliquam. Pellentesque pulvinar quam efficitur nisl elementum tempus. Sed pellentesque varius est molestie feugiat. Aliquam dapibus eget erat et accumsan. Maecenas sit amet pharetra nisi. Pellentesque semper ante quis est volutpat, vitae elementum urna ornare. Nullam a quam non nisi semper tempor id vel orci. Maecenas placerat sapien pharetra, venenatis ex et, gravida libero. Ut tristique laoreet est sit amet iaculis. Curabitur ultrices vestibulum viverra. Vestibulum lacus mauris, fringilla et felis ut, interdum placerat ante. Nullam et dui sit amet ante consequat eleifend.
+                    <a href="#sidebar" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">Lorem
+                        ipsum</a> dolor sit amet, consectetur adipiscing elit. Vestibulum viverra sit amet tortor id
+                    interdum. Sed congue mi et aliquam aliquam. Pellentesque pulvinar quam efficitur nisl elementum
+                    tempus. Sed pellentesque varius est molestie feugiat. Aliquam dapibus eget erat et accumsan.
+                    Maecenas sit amet pharetra nisi. Pellentesque semper ante quis est volutpat, vitae elementum urna
+                    ornare. Nullam a quam non nisi semper tempor id vel orci. Maecenas placerat sapien pharetra,
+                    venenatis ex et, gravida libero. Ut tristique laoreet est sit amet iaculis. Curabitur ultrices
+                    vestibulum viverra. Vestibulum lacus mauris, fringilla et felis ut, interdum placerat ante. Nullam
+                    et dui sit amet ante consequat eleifend.
                 </p>
                 <p class="bg-secondary-subtle px-3">
-                <b>Definição 1.1:</b> Um <b><a href="#grafo" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">Grafo</a></b> é definido pelo seu conjunto de vértices (pontos) e seu conjunto de arestas (ligações) entre os vértices. Formalmente escreve-se que um grafo G é o par ordenado G=(V, E) onde V é o conjunto de vértices e E é o conjunto de arestas; Visto que as arestas são pares distintos de vértices diz-se que E \(\subset \binom{|V|}{2} \), isto é, E é alguma parte das combinações dos pontos de V escolhidos dois a dois.
+                    <b>Definição 1.1:</b> Um <b><a href="#grafo" data-bs-toggle="offcanvas" aria-controls="sidebar"
+                            style="color:#066017;">Grafo</a></b> é definido pelo seu conjunto de vértices (pontos) e seu
+                    conjunto de arestas (ligações) entre os vértices. Formalmente escreve-se que um grafo G é o par
+                    ordenado G=(V, E) onde V é o conjunto de vértices e E é o conjunto de arestas; Visto que as arestas
+                    são pares distintos de vértices diz-se que E \(\subset \binom{|V|}{2} \), isto é, E é alguma parte
+                    das combinações dos pontos de V escolhidos dois a dois.
                 </p>
                 <p>
-                Donec tempor scelerisque neque, elementum interdum felis hendrerit nec. Phasellus quam arcu, sodales quis urna at, rutrum accumsan nisi. Nullam et est vitae magna laoreet semper sed quis purus. Morbi et pretium nunc, id viverra sem. Suspendisse gravida est eget neque tempor, ut egestas nisi sollicitudin. Fusce volutpat ultrices diam, nec vulputate tortor placerat a. Maecenas pellentesque sagittis dapibus. Nam imperdiet, felis eget pharetra auctor, velit nisl egestas massa, vel elementum mi dolor eget sapien. Sed eget ante bibendum sapien vulputate cursus. Aenean malesuada congue dui, quis suscipit ex ullamcorper pretium. Phasellus maximus mauris sed diam auctor viverra ac ut ligula.
+                    Donec tempor scelerisque neque, elementum interdum felis hendrerit nec. Phasellus quam arcu, sodales
+                    quis urna at, rutrum accumsan nisi. Nullam et est vitae magna laoreet semper sed quis purus. Morbi
+                    et pretium nunc, id viverra sem. Suspendisse gravida est eget neque tempor, ut egestas nisi
+                    sollicitudin. Fusce volutpat ultrices diam, nec vulputate tortor placerat a. Maecenas pellentesque
+                    sagittis dapibus. Nam imperdiet, felis eget pharetra auctor, velit nisl egestas massa, vel elementum
+                    mi dolor eget sapien. Sed eget ante bibendum sapien vulputate cursus. Aenean malesuada congue dui,
+                    quis suscipit ex ullamcorper pretium. Phasellus maximus mauris sed diam auctor viverra ac ut ligula.
                 </p>
                 <figure class="text-center">
                     <img src="./assets/Konigsberg_colour.jpg" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg</figcaption>
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
                 </figure>
                 <p>
-                Nulla vel leo et sapien accumsan congue eu sed neque. Aliquam a arcu sodales quam dictum interdum eget sed tellus. Phasellus in erat et metus luctus pretium. Morbi tempor tincidunt interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eu ultricies orci. Nulla ultrices gravida tincidunt. Vivamus eros tortor, venenatis eu porta id, pulvinar vitae dui. Suspendisse vulputate, nisi mattis convallis convallis, nisi libero aliquam odio, non volutpat mauris dolor tempor orci. Vivamus mi nisl, varius in odio nec, tempus ornare justo. Fusce in venenatis magna. Etiam aliquet arcu non arcu vehicula hendrerit.
-                Curabitur posuere, urna sit amet finibus tempus, leo dolor iaculis tortor, sit amet volutpat tortor velit et ex. Donec id viverra sem, vel semper justo. Sed vel condimentum orci. Aliquam sed dignissim leo. Nulla facilisi. Fusce et auctor tellus. Mauris vel consectetur magna. Donec tempus tempor aliquam.
-                Integer luctus leo pulvinar velit eleifend aliquam id feugiat enim. Curabitur in ligula lorem. Duis tempus nibh pulvinar odio dapibus fringilla. Etiam pulvinar, tellus quis rutrum lobortis, mauris eros ornare sapien, eu mattis eros elit et neque. Aliquam eget dolor ultrices, sagittis orci vel, aliquam lorem. Nunc tristique orci sed neque lobortis, eu fringilla est iaculis. Nulla auctor aliquam massa sed vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                    Nulla vel leo et sapien accumsan congue eu sed neque. Aliquam a arcu sodales quam dictum interdum
+                    eget sed tellus. Phasellus in erat et metus luctus pretium. Morbi tempor tincidunt interdum.
+                    Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eu ultricies orci. Nulla
+                    ultrices gravida tincidunt. Vivamus eros tortor, venenatis eu porta id, pulvinar vitae dui.
+                    Suspendisse vulputate, nisi mattis convallis convallis, nisi libero aliquam odio, non volutpat
+                    mauris dolor tempor orci. Vivamus mi nisl, varius in odio nec, tempus ornare justo. Fusce in
+                    venenatis magna. Etiam aliquet arcu non arcu vehicula hendrerit.
+                    Curabitur posuere, urna sit amet finibus tempus, leo dolor iaculis tortor, sit amet volutpat tortor
+                    velit et ex. Donec id viverra sem, vel semper justo. Sed vel condimentum orci. Aliquam sed dignissim
+                    leo. Nulla facilisi. Fusce et auctor tellus. Mauris vel consectetur magna. Donec tempus tempor
+                    aliquam.
+                    Integer luctus leo pulvinar velit eleifend aliquam id feugiat enim. Curabitur in ligula lorem. Duis
+                    tempus nibh pulvinar odio dapibus fringilla. Etiam pulvinar, tellus quis rutrum lobortis, mauris
+                    eros ornare sapien, eu mattis eros elit et neque. Aliquam eget dolor ultrices, sagittis orci vel,
+                    aliquam lorem. Nunc tristique orci sed neque lobortis, eu fringilla est iaculis. Nulla auctor
+                    aliquam massa sed vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                    cubilia curae;
                 </p>
+
+                <p>Primeiro selecione um vértice inicial, e feito isso, clique nas arestas que deseja atravessar. As
+                    arestas em vermelho já foram atravessadas e não podem ser cruzadas novamente, e o vértice em amarelo
+                    é a região de Königsberg onde você está no momento.</p>
+
+                <div id="container">
+                    <button id="resetBtn">↻<br>Reiniciar</button>
+                    <div id="cy"></div>
+                    <script>
+                        let currentNode = null;
+                        let usedEdges = new Set();
+
+                        let cy = cytoscape({
+                            container: document.getElementById('cy'),
+                            userZoomingEnabled: false,
+                            userPanningEnabled: false,
+                            autoungrabify: true,
+
+                            elements: [
+                                // NÓS
+                                { data: { id: 'A' }, position: { x: 260, y: 250 } },
+                                { data: { id: 'B' }, position: { x: 260, y: 360 } },
+                                { data: { id: 'C' }, position: { x: 260, y: 140 } },
+                                { data: { id: 'D' }, position: { x: 520, y: 250 } },
+
+                                // ARESTAS (com controle manual das curvas)
+                                { data: { id: 'a', source: 'A', target: 'B' }, classes: 'curved' },
+                                { data: { id: 'b', source: 'B', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'c', source: 'A', target: 'C' }, classes: 'curved' },
+                                { data: { id: 'd', source: 'C', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'e', source: 'A', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'f', source: 'B', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'g', source: 'C', target: 'D' }, classes: 'curved' }
+                            ],
+
+                            style: [
+                                {
+                                    selector: 'node',
+                                    style: {
+                                        'background-color': '#fff',
+                                        'border-width': 2,
+                                        'border-color': '#000',
+                                        'label': 'data(id)',
+                                        'width': 40,
+                                        'height': 40,
+                                        'text-valign': 'center',
+                                        'text-halign': 'center',
+                                        'font-size': 18
+                                    }
+                                },
+                                {
+                                    selector: 'edge',
+                                    style: {
+                                        'width': 8,
+                                        'line-color': 'gray',
+                                        'curve-style': 'unbundled-bezier',
+                                        'control-point-distances': 100,
+                                        'control-point-weights': 0.5,
+                                        'font-size': 18,
+                                        'text-margin-y': -10
+                                    }
+                                },
+                                {
+                                    selector: '.used',
+                                    style: {
+                                        'line-color': 'red'
+                                    }
+                                },
+                                {
+                                    selector: '.currentNode',
+                                    style: {
+                                        'background-color': 'yellow'
+                                    }
+                                }
+                            ],
+
+                            layout: {
+                                name: 'preset',
+                                fit: true,
+                            }
+                        });
+
+                        // Ajustes finos das curvas para parecerem com a imagem:
+                        function tweakCurves() {
+                            const ctrl = {
+                                a: { d: 50 },    // A–B
+                                b: { d: -40 },   // B–D
+                                c: { d: -50 },   // A–C
+                                d: { d: 40 },    // C–D
+                                e: { d: 0 },     // A–D
+                                f: { d: 40 },    // B–D (segunda)
+                                g: { d: -40 }    // C–D (segunda)
+                            };
+
+                            for (let id in ctrl) {
+                                cy.getElementById(id).style({
+                                    'control-point-distances': ctrl[id].d
+                                });
+                            }
+                        }
+                        tweakCurves();
+
+                        // --- Lógica do jogo ---
+
+                        // clique em nó
+                        cy.on('tap', 'node', evt => {
+                            let node = evt.target;
+
+                            if (!currentNode) {
+                                currentNode = node.id();
+                                cy.$('.currentNode').removeClass('currentNode');
+                                node.addClass('currentNode');
+                                return;
+                            }
+
+                            // trocar para outro nó só é permitido via aresta clicada
+                        });
+
+                        // clique em aresta
+                        cy.on('tap', 'edge', evt => {
+                            let e = evt.target;
+
+                            if (!currentNode) return;
+
+                            let s = e.data('source');
+                            let t = e.data('target');
+
+                            if (usedEdges.has(e.id())) return;
+
+                            // só pode atravessar se conectado ao vértice atual
+                            if (s === currentNode || t === currentNode) {
+                                usedEdges.add(e.id());
+                                e.addClass('used');
+
+                                // mover para o próximo nó
+                                currentNode = (s === currentNode ? t : s);
+                                cy.$('.currentNode').removeClass('currentNode');
+                                cy.getElementById(currentNode).addClass('currentNode');
+                            }
+                        });
+
+                        // botão de reinício
+                        document.getElementById('resetBtn').onclick = () => {
+                            usedEdges.clear();
+                            cy.edges().removeClass('used');
+                            cy.nodes().removeClass('currentNode');
+                            currentNode = null;
+                        };
+                    </script>
+                </div>
+
                 <p>
-                When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
-                \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
-                ffsdgsgadfgdfgrgagdf \(\binom{|N|}{2}\)
+                    When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
+                    \[x = {-b \pm \sqrt{b^2-4ac} \over 2a}.\]
+                    ffsdgsgadfgdfgrgagdf \(\binom{|N|}{2}\)
                 </p>
                 <h3>Referências</h3>
                 <ul>
-                    <li>BOLLOBÁS, Béla. Modern Graph Theory. New York: Springer, 1998. (Graduate Texts in Mathematics, 184).</li>
-                    <li>DIESTEL, Reinhard. Graph Theory. 5. ed. Berlin: Springer, 2017. (Graduate Texts in Mathematics, 173).</li>
-                    <li>EULER, Leonhard. Solution of a problem in the geometry of position. Traduzido para o inglês por Michael Behrend. <a style="word-wrap: break-word;" href="https://www.cantab.net/users/michael.behrend/repubs/maze_maths/pages/euler_en.html">cantab.net/users/michael.behrend/repubs/maze_maths/pages/euler_en.html</a>. Acesso em: 05/11/2025.</li>
-                    <li>MAO, Linfan. Graphs, Networks and Natural Reality – from Intuitive Abstracting to Theory. International Journal of Mathematical Combinatorics, Vol. 4, 2019.</li>
+                    <li>BOLLOBÁS, Béla. Modern Graph Theory. New York: Springer, 1998. (Graduate Texts in Mathematics,
+                        184).</li>
+                    <li>DIESTEL, Reinhard. Graph Theory. 5. ed. Berlin: Springer, 2017. (Graduate Texts in Mathematics,
+                        173).</li>
+                    <li>EULER, Leonhard. Solution of a problem in the geometry of position. Traduzido para o inglês por
+                        Michael Behrend. <a style="word-wrap: break-word;"
+                            href="https://www.cantab.net/users/michael.behrend/repubs/maze_maths/pages/euler_en.html">cantab.net/users/michael.behrend/repubs/maze_maths/pages/euler_en.html</a>.
+                        Acesso em: 05/11/2025.</li>
+                    <li>MAO, Linfan. Graphs, Networks and Natural Reality – from Intuitive Abstracting to Theory.
+                        International Journal of Mathematical Combinatorics, Vol. 4, 2019.</li>
                 </ul>
             </div>
-        </div> 
+        </div>
     </div>
 
     <!--Créditos e Agradecimentos-->
     <div class="container-fluid">
         <div class="row justify-content-center bg-black text-white text-center p-3">
             <div class="col-md-5">
-                <h3 >Créditos</h3>
+                <h3>Créditos</h3>
                 <p>
                     Alice Micheloni de Souza<br>
                     Eduardo Rodrigues Furlan de Mello<br>
@@ -91,10 +319,20 @@
         </div>
         <div class="offcanvas-body">
             <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
+                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
+                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+                software like Aldus PageMaker including versions of Lorem Ipsum.
             </p>
             <p>
-            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                It is a long established fact that a reader will be distracted by the readable content of a page when
+                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
+                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
+                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
             </p>
         </div>
     </div>
@@ -106,23 +344,35 @@
         </div>
         <div class="offcanvas-body">
             <p>
-            Aqui estão alguns exemplos visuais de grafos, aqui os vértices foram identificados pelos números de 1 à 4 podendo se dizer que os números são os vértices. Perceba que para o grafo não importa caso a representações de suas arestas se cruzem, mantenha em mente bem claro que as ligações são apenas entre pares de vértices. Tente justificar por conta própria que os exemplos 1 e 3 são, na verdade, o mesmo grafo só que desenhados de maneira diferente!
+                Aqui estão alguns exemplos visuais de grafos, aqui os vértices foram identificados pelos números de 1 à
+                4 podendo se dizer que os números são os vértices. Perceba que para o grafo não importa caso a
+                representações de suas arestas se cruzem, mantenha em mente bem claro que as ligações são apenas entre
+                pares de vértices. Tente justificar por conta própria que os exemplos 1 e 3 são, na verdade, o mesmo
+                grafo só que desenhados de maneira diferente!
             </p>
             <figure class="text-center">
                 <img src="./assets/Grafos.drawio.png" class="img-fluid mt-2 mb-4">
                 <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Grafos</figcaption>
             </figure>
             <p>
-            Agora grafos tem suas devidas restrições: Nenhuma aresta pode partir e terminar no mesmo ponto, isso chamamos de laço; Entre dois vértices há <b>no máximo</b> uma aresta, ou seja, não pode ter duas ou mais arestas entre o mesmo par de vértices, isso é devido à forma como o conjunto de arestas é definido como combinações então identificamos pares iguais à mesma aresta. Mas como sempre se cria excessões a estas regras, o problema estudado por Euler que veremos em breve é um exemplo no qual a segunda "regra" é violada. Abaixo exemplos de coisas que não se adequam à definição de grafo apresentada:
+                Agora grafos tem suas devidas restrições: Nenhuma aresta pode partir e terminar no mesmo ponto, isso
+                chamamos de laço; Entre dois vértices há <b>no máximo</b> uma aresta, ou seja, não pode ter duas ou mais
+                arestas entre o mesmo par de vértices, isso é devido à forma como o conjunto de arestas é definido como
+                combinações então identificamos pares iguais à mesma aresta. Mas como sempre se cria excessões a estas
+                regras, o problema estudado por Euler que veremos em breve é um exemplo no qual a segunda "regra" é
+                violada. Abaixo exemplos de coisas que não se adequam à definição de grafo apresentada:
             </p>
             <figure class="text-center">
                 <img src="./assets/NaoGrafos.drawio.png" class="img-fluid mt-2 mb-4">
-                <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Não-Grafos</figcaption>
+                <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Não-Grafos
+                </figcaption>
             </figure>
         </div>
     </div>
     <!--BOOTSTRAP 5 JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
 </body>
-</html>
 
+</html>
