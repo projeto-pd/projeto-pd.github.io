@@ -66,18 +66,27 @@
             <div class="p-2 col-sm-12 col-md-8 col-lg-7">
                 <h1 class="text-center">Coisa a respeito</h1>
                 <p>
-                    <a href="#sidebar" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">Lorem
-                        ipsum</a> dolor sit amet, consectetur adipiscing elit. Vestibulum viverra sit amet tortor id
-                    interdum. Sed congue mi et aliquam aliquam. Pellentesque pulvinar quam efficitur nisl elementum
-                    tempus. Sed pellentesque varius est molestie feugiat. Aliquam dapibus eget erat et accumsan.
-                    Maecenas sit amet pharetra nisi. Pellentesque semper ante quis est volutpat, vitae elementum urna
-                    ornare. Nullam a quam non nisi semper tempor id vel orci. Maecenas placerat sapien pharetra,
-                    venenatis ex et, gravida libero. Ut tristique laoreet est sit amet iaculis. Curabitur ultrices
-                    vestibulum viverra. Vestibulum lacus mauris, fringilla et felis ut, interdum placerat ante. Nullam
-                    et dui sit amet ante consequat eleifend.
+                    Imagine que você é um turista fotógrafo na Prússia no século XVIII, e seu objetivo é conhecer a cidade de Königsberg e a ilha localizada rio Pregel (imagem abaixo), e para aproveitar o máximo sua viagem e não repetir as fotografias passando por uma mesma ponte duas ou mais vezes, o seguinte desafio surge: É possível passar pelas sete pontes sem passar por alguma delas mais de uma vez?
                 </p>
+
+                <figure class="text-center">
+                    <img src="./assets/Konigsberg_colour.jpg" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Esse desafio pode parecer novo, mas sua solução foi elaborada alguns séculos atrás, isso aconteceu no século XVIII, quando o matemático Leonhard Euler visitou a cidade.
+                </p>
+                <p>
+                    Para compreender melhor como isso tudo aconteceu, vamos simplificar o nosso problema e reduzi-lo a um grafo, em seguida, compreenderemos melhor a solução.
+                </p>
+                <p>
+                    Mas afinal, o que é um grafo?
+                </p>
+
                 <p class="bg-secondary-subtle px-3">
-                    <b>Definição 1.1:</b> Um <b><a href="#grafo" data-bs-toggle="offcanvas" aria-controls="sidebar"
+                    <b>Definição 1:</b> Um <b><a href="#grafo" data-bs-toggle="offcanvas" aria-controls="sidebar"
                             style="color:#066017;">Grafo</a></b> é definido pelo seu conjunto de vértices (pontos) e seu
                     conjunto de arestas (ligações) entre os vértices. Formalmente escreve-se que um grafo G é o par
                     ordenado G=(V, E) onde V é o conjunto de vértices e E é o conjunto de arestas; Visto que as arestas
@@ -85,40 +94,31 @@
                     das combinações dos pontos de V escolhidos dois a dois.
                 </p>
                 <p>
-                    Donec tempor scelerisque neque, elementum interdum felis hendrerit nec. Phasellus quam arcu, sodales
-                    quis urna at, rutrum accumsan nisi. Nullam et est vitae magna laoreet semper sed quis purus. Morbi
-                    et pretium nunc, id viverra sem. Suspendisse gravida est eget neque tempor, ut egestas nisi
-                    sollicitudin. Fusce volutpat ultrices diam, nec vulputate tortor placerat a. Maecenas pellentesque
-                    sagittis dapibus. Nam imperdiet, felis eget pharetra auctor, velit nisl egestas massa, vel elementum
-                    mi dolor eget sapien. Sed eget ante bibendum sapien vulputate cursus. Aenean malesuada congue dui,
-                    quis suscipit ex ullamcorper pretium. Phasellus maximus mauris sed diam auctor viverra ac ut ligula.
+                    Note que podemos transformar o nosso problema inicial em um grafo, para isso, tomamos os seguintes passos:
                 </p>
+                <ol>
+                    <li>
+                        Identificamos cada pedaço de terra de Königsberg por meio de uma letra, os vértices do grafo.
+                    </li>
+                    <li>
+                        Se dois pedaços de terra estiverem conectados por uma ponte, ligamos às duas letras que representam esses pedaços por meio de uma aresta. 
+                    </li>
+                </ol>
+
                 <figure class="text-center">
-                    <img src="./assets/Konigsberg_colour.jpg" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    <img src="./assets/Konigsberg_com_vertices.PNG" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.2 - Königsberg visto como um Grafo
                     </figcaption>
                 </figure>
+                
                 <p>
-                    Nulla vel leo et sapien accumsan congue eu sed neque. Aliquam a arcu sodales quam dictum interdum
-                    eget sed tellus. Phasellus in erat et metus luctus pretium. Morbi tempor tincidunt interdum.
-                    Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque eu ultricies orci. Nulla
-                    ultrices gravida tincidunt. Vivamus eros tortor, venenatis eu porta id, pulvinar vitae dui.
-                    Suspendisse vulputate, nisi mattis convallis convallis, nisi libero aliquam odio, non volutpat
-                    mauris dolor tempor orci. Vivamus mi nisl, varius in odio nec, tempus ornare justo. Fusce in
-                    venenatis magna. Etiam aliquet arcu non arcu vehicula hendrerit.
-                    Curabitur posuere, urna sit amet finibus tempus, leo dolor iaculis tortor, sit amet volutpat tortor
-                    velit et ex. Donec id viverra sem, vel semper justo. Sed vel condimentum orci. Aliquam sed dignissim
-                    leo. Nulla facilisi. Fusce et auctor tellus. Mauris vel consectetur magna. Donec tempus tempor
-                    aliquam.
-                    Integer luctus leo pulvinar velit eleifend aliquam id feugiat enim. Curabitur in ligula lorem. Duis
-                    tempus nibh pulvinar odio dapibus fringilla. Etiam pulvinar, tellus quis rutrum lobortis, mauris
-                    eros ornare sapien, eu mattis eros elit et neque. Aliquam eget dolor ultrices, sagittis orci vel,
-                    aliquam lorem. Nunc tristique orci sed neque lobortis, eu fringilla est iaculis. Nulla auctor
-                    aliquam massa sed vehicula. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
-                    cubilia curae;
+                    Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo, escolha um vértice para iniciar e a sequência de arestas até a conclusão do percurso.
+                </p>
+                <p>
+                    Note que o vértice em que o fotógrafo se encontra está amarelo e as arestas já percorridas ficam em vermelho.
                 </p>
 
-                <p>Primeiro selecione um vértice inicial, e feito isso, clique nas arestas que deseja atravessar. As
+                <p> Como jogar: Primeiro selecione um vértice inicial, e feito isso, clique nas arestas que deseja atravessar. As
                     arestas em vermelho já foram atravessadas e não podem ser cruzadas novamente, e o vértice em amarelo
                     é a região de Königsberg onde você está no momento.</p>
 
@@ -267,6 +267,105 @@
                         };
                     </script>
                 </div>
+
+                <p>
+                    Esse desafio parece um tanto difícil, não é? Antes de chegarmos a conclusão de Euler acerca desse problema, introduziremos alguns conceitos importantes para formular melhor a conclusão. <br>
+                </p>
+                <p>
+                    Retornando a ideia de grafo, um caminho em um grafo é uma sequência de vértices e arestas x₁, a₁, x₂, a₂ ... onde cada vértice xi em um caminho é conectado ao seu sucessor pela aresta ai. Para exemplificar esse conceito, observe o seguinte grafo:
+                </p>
+
+                <figure class="text-center">
+                    <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Objetivo: Iniciando no vértice X1, prosseguir para o vértice X2 e finalizar no vértice X3. Conforme a animação abaixo:
+                </p>
+
+                <figure class="text-center">
+                    <img src="./assets/animacao_grafo_c.gif" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Podemos representar esse caminho da seguinte forma:
+                </p>
+                <p>
+                    Caminho = \(x_1, a_1, x_2, a_2, x_3\).
+                </p>
+                <p>
+                    Um caminho que percorre todas as arestas de um grafo G, passando por cada aresta apenas uma vez, é chamado de circuito euleriano em G. Com o grafo da imagem abaixo, busquemos identificar qual deles é um circuito euleriano.
+                </p>
+
+                <figure class="text-center">
+                    <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Caminho 1: \(x_1, a_1, x_2, a_2, x_3, a_3, x_4, a_4, x_1\). <br>
+                    Caminho 2: \(x_1, a_1, x_2, a_6, x_4, a_6, x_2, a_2, x_3, a_3, x_4, a_4, x_1\). <br>
+                    Caminho 3: \(x_1, a_1, x_2, a_2, x_3, a_3, x_4, a_5, x_2, a_6, x_4, a_4, x_1\).
+                </p>
+
+                <figure class="text-center">
+                    <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
+                </figure>
+
+                <p>
+                    Além disso, dizemos que um grafo é conexo se podemos encontrar um caminho conectando quaisquer dois vértices. <br>
+                </p>
+                <p>
+                    Conhecendo esses conceitos, o problema inicial se resume em encontrarmos um circuito euleriano para o grafo inicial. Esse caminho existe? Se sim, como encontrá-lo? <br>
+                </p>
+                <p>    
+                    O matemático Leonhard Euler chegou a conclusão que não exite um caminho euleriano para o grafo representando Königsberg. A razão é dada pelo seguinte teorema:
+                </p>
+
+                <div class="container bg-secondary-subtle px-3">
+                    <p><b>Teorema 1:</b> Um grafo conexo G admite um circuito euleriano se, e somente se, cada um de seus vértices possui um número par de arestas que saem dele.<br>
+                    Simplificando a linguagem formal do teorema, pode-se entendê-lo em duas partes: <br>
+                    </p>
+                    <ol>
+                        <li>Se um grafo possui caminhos que ligam quaisquer dois vértices e tem um caminho que percorre todas as arestas sem repetir ao menos uma delas, então cada um dos vértices que compõem o grafo possui um número de arestas que saem dele.</li>
+                        <li>Se cada um dos vértices que compõem um grafo tem o número par de arestas que saem dele e possui caminhos que ligam quais dois vértices, então existe um caminho que percorre todas as arestas sem repetir ao menos uma delas, ou seja, um circuito euleriano.</li>
+                    </ol>
+                </div>
+
+                <p>
+                    No grafo inicial, todos os vértices possuem um número ímpar de arestas que saem dele, o que significa, pela parte 2, que não existe nenhum circuito euleriano, logo, não é possível encontrar um caminho que percorra todas as arestas sem ao menos repetir uma delas, independente de qual seja o vértice inicial.
+                </p>
+                <p> 
+                    Euler em 1736 não demonstrou o resultado completo, na realidade, ele provou apenas que a admissão de um circuito euleriano garante que todos os vértices têm um número par de arestas, e mostrar que tal condição implica a existência de um circuito euleriano foi um problema em aberto por mais de um século, até que uma demonstração por Carl Hierholzer foi publicada em 1873 (DIESTEL, 2017).
+                </p>
+                <p>
+                    Resolvido o problema, conclui-se que o fotógrafo teve as suas intenções iniciais frustradas, haverá ao menos uma foto repetida. Por outro lado, compreendemos melhor qual era o problema das sete pontes de Königsberg, o que é um grafo e os conceitos relacionados (caminho, circuito euleriano e grafo conexo), transformamos o problema inicial em um grafo e entendemos a solução proposta por Euler. E além disso, esse problema gerou uma nova área na matemática:  a teoria dos grafos.
+                </p>
+                <p>
+                    Hoje, a teoria dos grafos é uma área de pesquisa ativa na matemática, sendo quase sinônima com a análise combinatória e encontrando aplicações nas mais diversas áreas do conhecimento, como a ciência da computação e a engenharia elétrica, suas aplicações vão desde algoritmos como o Pagerank, algoritmo de busca original do Google, até o estudo da confiabilidade de redes elétricas.
+                </p>
+                <p>    
+                    <b>Curiosidades</b>
+                </p>
+
+                <ul>
+                    <li>No Centro de Matemática, Computação e Cognição (CMCC) UFABC temos professores especializados em teoria dos grafo, a muitos deles no laboratório de Teoria da Computação, Otimização, Combinatória e Algoritmos mais conhecido como TOCA;</li>
+                    <li>Hoje em dia, no Kaliningrado (nome moderno de Königsberg), apenas duas  das pontes da época de Euler ainda existem, as outras foram demolidas por diversos motivos, duas foram demolidas para a construção de uma via expressa, duas foram bombardeadas na segunda guerra mundial, e uma outra foi reconstruída em 1935;</li>
+                    <li>É possível realizar um caminho euleriano no arranjo atual das pontes!</li>
+                </ul>
+
+                <figure class="text-center">
+                    <img src="./assets/solucaoAtual.jpg" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    </figcaption>
+                </figure>
 
                 <p>
                     When \(a \ne 0\), there are two solutions to \(ax^2 + bx + c = 0\) and they are
