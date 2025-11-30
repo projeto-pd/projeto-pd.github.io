@@ -112,7 +112,7 @@
                 </figure>
                 
                 <p>
-                    Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo, escolha um vértice para iniciar e a sequência de arestas até a conclusão do percurso.
+                    Da forma que foi elaborado a nossa abstração não se adequa com a nossa definição de grafo, mas é possível corrigir isso com uma <a href="#modTec" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">modificação técnica</a>. Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo, escolha um vértice para iniciar e a sequência de arestas até a conclusão do percurso.
                 </p>
                 <p>
                     Note que o vértice em que o fotógrafo se encontra está amarelo e as arestas já percorridas ficam em vermelho.
@@ -272,12 +272,12 @@
                     Esse desafio parece um tanto difícil, não é? Antes de chegarmos a conclusão de Euler acerca desse problema, introduziremos alguns conceitos importantes para formular melhor a conclusão. <br>
                 </p>
                 <p>
-                    Retornando a ideia de grafo, um caminho em um grafo é uma sequência de vértices e arestas x₁, a₁, x₂, a₂ ... onde cada vértice xi em um caminho é conectado ao seu sucessor pela aresta ai. Para exemplificar esse conceito, observe o seguinte grafo:
+                    Retornando a ideia de grafo, um <b>caminho</b> em um grafo é uma sequência de vértices e arestas \(x_1, a_1, x_2, a_2, \cdots\) onde cada vértice \(x_i\) em um caminho é conectado ao seu sucessor pela aresta ai. Para exemplificar esse conceito, observe o seguinte grafo:
                 </p>
 
                 <figure class="text-center">
                     <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.3 - Grafo Exemplo
                     </figcaption>
                 </figure>
 
@@ -287,7 +287,7 @@
 
                 <figure class="text-center">
                     <img src="./assets/animacao_grafo_c.gif" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.4 - Exemplo de Caminho
                     </figcaption>
                 </figure>
 
@@ -303,7 +303,7 @@
 
                 <figure class="text-center">
                     <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.3 - Grafo Exemplo
                     </figcaption>
                 </figure>
 
@@ -315,7 +315,7 @@
 
                 <figure class="text-center">
                     <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Circuito Euleriano
                     </figcaption>
                 </figure>
 
@@ -363,7 +363,15 @@
 
                 <figure class="text-center">
                     <img src="./assets/solucaoAtual.jpg" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.1 - Pontes de Königsberg
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.6 - Solução Possível Atual
+                    </figcaption>
+                </figure>
+
+                <p>Finalizamos esta apresentação com um desafio: você consegue desenhar a figura abaixo sem levantar o lápis e sem sobrescrever qualquer linha? </p>
+
+                <figure class="text-center">
+                    <img src="./assets/Desafio.drawio.png" class="img-fluid mt-2 mb-4">
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.7 - Desafio
                     </figcaption>
                 </figure>
                 
@@ -413,20 +421,6 @@
         </div>
         <div class="offcanvas-body">
             <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
-                industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
-                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.
-            </p>
-            <p>
-                It is a long established fact that a reader will be distracted by the readable content of a page when
-                looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
-                of letters, as opposed to using 'Content here, content here', making it look like readable English. Many
-                desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a
-                search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have
-                evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
             </p>
         </div>
     </div>
@@ -461,6 +455,29 @@
                 <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Não-Grafos
                 </figcaption>
             </figure>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="modTec" aria-labelledby="modTec-label">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="modTec-label">Grafo Modificado</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>
+                A característica principal que impede nossa abstração de ser considerada um grafo é a existência de arestas paralelas, isto é, pares de vértices \(v_1\) e \(v_2\) ligado por duas ou mais arestas distintas. Para resolver esse problema, Euler em sua publicação fez com que os objetos que representam as arestas existam independente dos vértices. Para saber qual aresta liga quais vértices foi criado um novo objeto, uma função, para guardar tal informação. A definição fica então da seguinte forma:
+            </p>
+
+            <p class="bg-secondary-subtle px-3">
+                <b>Definição 1.1:</b> Um grafo é definido pelo seu conjunto de vértices; Seu conjunto de arestas; E sua função de adjacência. Formalmente escreve-se que um grafo G é a tripla ordenada G=(V, E, f) onde V é o conjunto de vértices, E é o conjunto de arestas, e f é uma função de arestas para pares ordenados de vértices, isto é, <br>\(f : E \rightarrow V \times V \) que significa para a aresta \(e_1\) liga os pares de vértices \(f(e_1)\).
+            </p>
+
+            <p>
+                Embora isso resolva a existência de arestas paralelas, pois agora pode existir arestas distintas \(e_1 \neq e_2 \) tais que sem problemas <br>\(f(e_1) = f(e_2) \), surge um novo problema:
+            </p>
+            <p>
+                Sejam arestas \(e_1 \neq e_2 \) e vértices \(v_1 \neq v_2 \) há uma diferença no significado de <br>\(f(e_1) = (v_1,v_2) \neq (v_2,v_1) = f(e_2) \), no entanto gostaríamos que fossem iguais afinal eles ligam os mesmos vértices. Isto fenômeno de orientação, como se as pontes só pudessem ser cruzadas apenas num único sentido. <br> É possível remover este fenômeno fazendo o quociente de \(V \times V\) por uma classe de equivalência \(\sim \) gerando o conjunto \(V \times V / \sim \), mas essa técnica é mais elaborada e foge do escopo desta publicação.
+            </p>
         </div>
     </div>
     <!--BOOTSTRAP 5 JS-->
