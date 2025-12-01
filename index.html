@@ -374,7 +374,7 @@
                 </p>
 
                 <ul>
-                    <li>No Centro de Matemática, Computação e Cognição (CMCC) UFABC temos professores especializados em teoria dos grafo, a muitos deles no laboratório de Teoria da Computação, Otimização, Combinatória e Algoritmos, que é mais conhecido como TOCA;</li>
+                    <li>No Centro de Matemática, Computação e Cognição (CMCC) UFABC temos professores especializados em Teoria de Grafos, com muitos deles no laboratório de Teoria da Computação, Otimização, Combinatória e Algoritmos, que é mais conhecido como TOCA;</li>
                     <li>Atualmente, em Kaliningrado (antiga Königsberg), apenas duas das pontes existentes na época de Euler permanecem de pé. As demais desapareceram por diferentes razões: duas foram demolidas para dar lugar a uma via expressa, duas foram destruídas durante os bombardeios da Segunda Guerra Mundial e outra foi reconstruída em 1935.</li>
                     <li>É possível realizar um caminho euleriano no arranjo atual das pontes!</li>
                 </ul>
@@ -440,23 +440,21 @@
         </div>
         <div class="offcanvas-body">
             <p>
-                Aqui estão alguns exemplos visuais de grafos, aqui os vértices foram identificados pelos números de 1 à
-                4 podendo se dizer que os números são os vértices. Perceba que para o grafo não importa caso a
+                Aqui estão alguns exemplos visuais de grafos, onde os vértices foram identificados pelos números de 1 à
+                4 podendo-se dizer que os números são os vértices. Perceba que para o grafo, não importa caso a
                 representações de suas arestas se cruzem, mantenha em mente bem claro que as ligações são apenas entre
                 pares de vértices. Tente justificar por conta própria que os exemplos 1 e 3 são, na verdade, o mesmo
-                grafo só que desenhados de maneira diferente!
+                grafo só que desenhados de maneiras diferente!
             </p>
             <figure class="text-center">
                 <img src="./assets/Grafos.drawio.png" class="img-fluid mt-2 mb-4">
                 <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.A1 - Exemplos de Grafos</figcaption>
             </figure>
             <p>
-                Agora grafos tem suas devidas restrições: Nenhuma aresta pode partir e terminar no mesmo ponto, isso
-                chamamos de laço; Entre dois vértices há <b>no máximo</b> uma aresta, ou seja, não pode ter duas ou mais
-                arestas entre o mesmo par de vértices, isso é devido à forma como o conjunto de arestas é definido como
-                combinações então identificamos pares iguais à mesma aresta. Mas como sempre se cria excessões a estas
-                regras, o problema estudado por Euler que veremos em breve é um exemplo no qual a segunda "regra" é
-                violada. Abaixo exemplos de coisas que não se adequam à definição de grafo apresentada:
+               Agora, alguns grafos vêm com restrições. Nos <b>grafos simples</b>, não permitimos laços — isto é, nenhuma aresta pode começar e terminar no mesmo vértice. Também não permitimos mais de uma aresta entre o mesmo par de vértices; entre dois vértices há, portanto, no máximo uma aresta.
+Essas condições fazem parte da própria definição de grafo simples.
+Entretanto, como sempre existem exceções, o problema estudado por Euler — que veremos adiante — viola a segunda condição, pois envolve múltiplas arestas entre os mesmos vértices.
+A seguir, alguns exemplos de estruturas que não se enquadram na definição de grafo simples apresentada.
             </p>
             <figure class="text-center">
                 <img src="./assets/NaoGrafos.drawio.png" class="img-fluid mt-2 mb-4">
@@ -473,19 +471,42 @@
         </div>
         <div class="offcanvas-body">
             <p>
-                A característica principal que impede nossa abstração de ser considerada um grafo é a existência de arestas paralelas, isto é, pares de vértices \(v_1\) e \(v_2\) ligado por duas ou mais arestas distintas. Para resolver esse problema, Euler em sua publicação fez com que os objetos que representam as arestas existam independente dos vértices. Para saber qual aresta liga quais vértices foi criado um novo objeto, uma função, para guardar tal informação. A definição fica então da seguinte forma:
-            </p>
-
-            <p class="bg-secondary-subtle px-3">
-                <b>Definição 1.1:</b> Um grafo é definido pelo seu conjunto de vértices; Seu conjunto de arestas; E sua função de adjacência. Formalmente escreve-se que um grafo G é a tripla ordenada G=(V, E, f) onde V é o conjunto de vértices, E é o conjunto de arestas, e f é uma função de arestas para pares ordenados de vértices, isto é, <br>\(f : E \rightarrow V \times V \) que significa para a aresta \(e_1\) liga os pares de vértices \(f(e_1)\).
-            </p>
-
-            <p>
-                Embora isso resolva a existência de arestas paralelas, pois agora pode existir arestas distintas \(e_1 \neq e_2 \) tais que sem problemas <br>\(f(e_1) = f(e_2) \), surge um novo problema:
-            </p>
-            <p>
-                Sejam arestas \(e_1 \neq e_2 \) e vértices \(v_1 \neq v_2 \) há uma diferença no significado de <br>\(f(e_1) = (v_1,v_2) \neq (v_2,v_1) = f(e_2) \), no entanto gostaríamos que fossem iguais afinal eles ligam os mesmos vértices. Isto fenômeno de orientação, como se as pontes só pudessem ser cruzadas apenas num único sentido. <br> É possível remover este fenômeno fazendo o quociente de \(V \times V\) por uma classe de equivalência \(\sim \) gerando o conjunto \(V \times V / \sim \), mas essa técnica é mais elaborada e foge do escopo desta publicação.
-            </p>
+                A principal característica que impede nossa abstração inicial de ser considerada um 
+                <strong>grafo simples</strong> é a presença de <em>arestas paralelas</em>, isto é, dois ou mais vínculos 
+                distintos entre o mesmo par de vértices \(v_1\) e \(v_2\). Para tratar corretamente situações 
+                desse tipo, como no problema estudado por Euler, é conveniente que as arestas sejam 
+                objetos independentes dos pares de vértices.
+                </p>
+                
+                <p>
+                Com essa ideia, definimos um grafo atribuindo a cada aresta o par de vértices que ela 
+                conecta por meio de uma função apropriada. A definição fica então:
+                </p>
+                
+                <div class="bg-secondary-subtle px-3">
+                <p><strong>Definição 1.1.</strong>  
+                Um grafo é determinado pelo conjunto de vértices \(V\), pelo conjunto de arestas \(E\) 
+                e por uma função de incidência. Formalmente, um grafo é a tripla ordenada
+                \[
+                    G = (V, E, f),
+                \]
+                na qual \(V\) é o conjunto de vértices, \(E\) é o conjunto de arestas, e
+                \[
+                    f : E \to \binom{V}{2}
+                \]
+                associa a cada aresta o par <em>não ordenado</em> de vértices que ela conecta.
+                </p>
+                </div>
+                
+                <p>
+                Essa escolha evita problemas de orientação: como utilizamos pares não ordenados, 
+                não há diferença entre \(\{v_1,v_2\}\) e \(\{v_2,v_1\}\). Além disso, permite que existam 
+                arestas distintas \(e_1 \neq e_2\) com a mesma incidência,
+                \[
+                    f(e_1) = f(e_2),
+                \]
+                o que representa naturalmente arestas paralelas.
+                </p>
         </div>
     </div>
     <!--BOOTSTRAP 5 JS-->
