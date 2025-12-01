@@ -313,22 +313,25 @@
                     Caminho 2: \(x_1, a_1, x_2, a_6, x_4, a_6, x_2, a_2, x_3, a_3, x_4, a_4, x_1\). <br>
                     Caminho 3: \(x_1, a_1, x_2, a_2, x_3, a_3, x_4, a_5, x_2, a_6, x_4, a_4, x_1\).
                 </p>
-                <!--Acordeao-->
                 <div class="accordion mb-3" id="resposta">
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="coisa">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#resp" aria-expanded="false" aria-controls="resp">
+                            <button class="accordion-button collapsed" type="button"
+                                    data-bs-toggle="collapse" data-bs-target="#resp"
+                                    aria-expanded="false" aria-controls="resp">
                                 Clique aqui para ver a resposta
                             </button>
                         </h2>
-
-                        <div id="resp" class="accordion-collapse collapse" aria-labelledby="Resposta" data-bs-parent="resposta">
+                
+                        <div id="resp" class="accordion-collapse collapse"
+                             aria-labelledby="coisa" data-bs-parent="#resposta">
                             <div class="accordion-body">
                                 <p>A resposta correta é o caminho 3.</p>
                                 <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\). Enquanto o caminho 2, além de não passar por \(a_5\), ele também repete a aresta \(a_6\). Logo, nenhum dos dois caminhos são eulerianos.</p>
                                 <figure class="text-center">
                                     <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
-                                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Caminho euleriano
+                                    <figcaption class="text-center text-white bg-dark ms-5 me-5">
+                                        Fig.5 - Caminho euleriano
                                     </figcaption>
                                 </figure>
                             </div>
