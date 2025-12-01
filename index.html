@@ -104,7 +104,7 @@
                     </li>
                 </ol>
 
-                <figure class="text-center">
+                <figure class="text-center px-5">
                     <img src="./assets/Konigsberg_com_vertices.PNG" class="img-fluid mt-2 mb-4">
                     <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.2 - Königsberg visto como um Grafo
                     </figcaption>
@@ -274,7 +274,7 @@
                     Retornando a ideia de grafo, um <b>caminho</b> em um grafo é uma sequência de vértices e arestas \(x_1, a_1, x_2, a_2, \cdots\) onde cada vértice \(x_i\) em um caminho é conectado ao seu sucessor pela aresta ai. Para exemplificar esse conceito, observe o seguinte grafo:
                 </p>
 
-                <figure class="text-center">
+                <figure class="text-center px-5">
                     <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
                     <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.3 - Grafo Exemplo
                     </figcaption>
@@ -284,7 +284,7 @@
                     Objetivo: Iniciando no vértice X1, prosseguir para o vértice X2 e finalizar no vértice X3. Conforme a animação abaixo:
                 </p>
 
-                <figure class="text-center">
+                <figure class="text-center px-5">
                     <img src="./assets/animacao_grafo_c.gif" class="img-fluid mt-2 mb-4">
                     <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.4 - Exemplo de Caminho
                     </figcaption>
@@ -302,7 +302,7 @@
                     <b>Exercício:</b> Com o grafo da imagem abaixo, identifique qual dos seguintes caminhos é euleriano:
                 </p>
 
-                <figure class="text-center">
+                <figure class="text-center px-5">
                     <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
                     <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.3 - Grafo Exemplo
                     </figcaption>
@@ -313,12 +313,29 @@
                     Caminho 2: \(x_1, a_1, x_2, a_6, x_4, a_6, x_2, a_2, x_3, a_3, x_4, a_4, x_1\). <br>
                     Caminho 3: \(x_1, a_1, x_2, a_2, x_3, a_3, x_4, a_5, x_2, a_6, x_4, a_4, x_1\).
                 </p>
+                <!--Acordeao-->
+                <div class="accordion mb-3" id="resposta">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="coisa">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#resp" aria-expanded="false" aria-controls="resp">
+                                Clique aqui para ver a resposta
+                            </button>
+                        </h2>
 
-                <figure class="text-center">
-                    <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Circuito Euleriano
-                    </figcaption>
-                </figure>
+                        <div id="resp" class="accordion-collapse collapse" aria-labelledby="Resposta" data-bs-parent="resposta">
+                            <div class="accordion-body">
+                                <p>A resposta correta é apenas o caminho 3.</p>
+                                <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\). Enquanto o caminho 2 além de não passar por \(a_5\) ele também repete a aresta \(a_6\). Logo, nenhum dos dois são eulerianos.</p>
+                                <figure class="text-center">
+                                    <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
+                                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Circuito Euleriano
+                                    </figcaption>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
 
                 <p>
                     Além disso, dizemos que um grafo é conexo se podemos encontrar um caminho conectando quaisquer dois vértices. <br>
@@ -415,16 +432,6 @@
     </div>
 
     <!--Off Canvanses-->
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="sidebar-label">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="sidebar-label">Lorem ipsum</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-        </div>
-        <div class="offcanvas-body">
-            <p>
-            </p>
-        </div>
-    </div>
 
     <div class="offcanvas offcanvas-end" tabindex="-1" id="grafo" aria-labelledby="grafo-label">
         <div class="offcanvas-header">
