@@ -297,7 +297,7 @@
                     Caminho = \(x_1, a_1, x_2, a_2, x_3\).
                 </p>
                 <p>
-                    Um caminho que percorre todas as arestas de um grafo G, passando por cada aresta apenas uma vez, é chamado de circuito euleriano em G. 
+                    Um caminho que percorre todas as arestas de um grafo G, passando por cada aresta apenas uma vez, é chamado de <b>caminho euleriano</b> em G. 
                 </p>
                     <b>Exercício:</b> Com o grafo da imagem abaixo, identifique qual dos seguintes caminhos é euleriano:
                 </p>
@@ -328,7 +328,7 @@
                                 <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\). Enquanto o caminho 2, além de não passar por \(a_5\), ele também repete a aresta \(a_6\). Logo, nenhum dos dois caminhos são eulerianos.</p>
                                 <figure class="text-center">
                                     <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
-                                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Circuito Euleriano
+                                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Caminho Euleriano
                                     </figcaption>
                                 </figure>
                             </div>
@@ -341,30 +341,24 @@
                     Além disso, dizemos que um grafo é conexo se podemos encontrar um caminho conectando quaisquer dois vértices. <br>
                 </p>
                 <p>
-                    Conhecendo esses conceitos, o problema inicial se resume em encontrarmos um circuito euleriano para o grafo inicial. Esse caminho existe? Se sim, como encontrá-lo? <br>
+                    Conhecendo esses conceitos, o problema inicial se resume em encontrarmos um caminho euleriano para o grafo inicial. Esse caminho existe? Se sim, como encontrá-lo? <br>
                 </p>
                 <p>    
                     O matemático Leonhard Euler chegou a conclusão que não existe um caminho euleriano para o grafo representando Königsberg. A razão é dada pelo seguinte teorema:
                 </p>
 
                 <div class="container bg-secondary-subtle px-3">
-                    <p><b>Teorema 1:</b> Um grafo conexo G admite um circuito euleriano se, e somente se, cada um de seus vértices possui um número par de arestas que saem dele.<br>
-                    Simplificando a linguagem formal do teorema, pode-se entendê-lo em duas partes: <br>
-                    </p>
-                    <ol>
-                        <li>Se um grafo possui caminhos que ligam quaisquer dois vértices e tem um caminho que percorre todas as arestas sem repetir nenhuma delas, então cada um dos vértices que compõem o grafo possui um número par de arestas que saem dele.</li>
-                        <li>Se cada um dos vértices que compõem um grafo tem um número par de arestas que saem dele e possui caminhos que ligam quaisquer dois vértices, então existe um caminho que percorre todas as arestas sem repetir nenhuma delas, ou seja, um circuito euleriano.</li>
-                    </ol>
+                    <p><b>Teorema:</b> Um grafo conexo admite um caminho euleriano se, e somente se, existem exatamente zero ou dois vértices com um número ímpar de arestas saindo deles.</p>
+                    <p>Em outras palavras, se dados dois vértices em um grafo, se existe um caminho conectando os dois, então existe um caminho euleriano exatamente quando existem apenas zero ou dois vértices com um número ímpar de arestas saindo deles.</p>
                 </div>
 
                 <p>
-                    No grafo representando Königsberg, todos os vértices têm grau ímpar. Pela parte 1, isso exclui a possibilidade de um caminho euleriano: não existe percurso que utilize cada aresta exatamente uma vez, pois isso implicaria que cada um dos vértices possui um número par de arestas que saem dele, uma contradição. Portanto, alguma aresta precisaria ser repetida em qualquer caminho, independentemente do vértice de partida.
-                </p>
+                    No grafo representando Königsberg, todos quatro vértices têm grau ímpar, então o teorema nos diz que não existe um caminho euleriano no grafo! </p>
                 <p> 
-                    Vale comentar que Euler, em 1736, não estabeleceu o critério completo. Ele mostrou apenas que, se um circuito euleriano existe, então todos os vértices devem ter grau par. A recíproca (de que graus pares garantem a existência de tal circuito) permaneceu sem demonstração por mais de um século, até que Carl Hierholzer apresentou uma demonstração em 1873 (DIESTEL, 2017).
+                    Vale comentar que Euler, em 1736, não estabeleceu o critério completo. Ele mostrou apenas que, se um caminho euleriano existe, então necessariamente o grafo é conexo e possui exatamente zero ou dois vértices com um número ímpar de arestas saindo deles. A recíproca (se um grafo é conexo e existem exatamente zero ou dois vértices com um número ímpar de arestas saindo deles, então existe um caminho euleriano) permaneceu sem demonstração por mais de um século, até que Carl Hierholzer apresentou uma demonstração em 1873 (DIESTEL, 2017).
                 </p>
                 <p>
-                    Resolvido o problema, conclui-se que o fotógrafo teve as suas intenções iniciais frustradas, pois necessariamente haverá ao menos uma foto repetida. Por outro lado, compreendemos melhor qual era o problema das sete pontes de Königsberg, o que é um grafo e os conceitos relacionados (caminho, circuito euleriano e grafo conexo), transformamos o problema inicial em um grafo e entendemos a solução proposta por Euler. E além disso, esse problema gerou uma nova área na matemática: a teoria dos grafos.
+                    Resolvido o problema, conclui-se que o fotógrafo teve as suas intenções iniciais frustradas, pois necessariamente haverá ao menos uma foto repetida. Por outro lado, compreendemos melhor qual era o problema das sete pontes de Königsberg, o que é um grafo e os conceitos relacionados (caminho, caminho euleriano e grafo conexo), transformamos o problema inicial em um grafo e entendemos a solução proposta por Euler. E além disso, esse problema gerou uma nova área na matemática: a teoria dos grafos.
                 </p>
                 <p>
                     Hoje, a teoria dos grafos é uma área de pesquisa ativa na matemática, encontrando aplicações nas mais diversas áreas do conhecimento, como a ciência da computação e a engenharia elétrica, com aplicações que vão desde algoritmos como o Pagerank, algoritmo de busca original do Google, até o estudo da confiabilidade de redes elétricas.
