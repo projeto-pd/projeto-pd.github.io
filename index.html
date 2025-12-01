@@ -89,29 +89,29 @@
                             style="color:#066017;">Grafo</a></b> é definido pelo seu conjunto de vértices (pontos) e seu
                     conjunto de arestas (ligações) entre os vértices. Formalmente escreve-se que um grafo G é o par
                     ordenado G=(V, E) onde V é o conjunto de vértices e E é o conjunto de arestas; Visto que as arestas
-                    são pares distintos de vértices diz-se que E \(\subset \binom{|V|}{2} \), isto é, E é alguma parte
+                    são pares distintos de vértices, diz-se que E \(\subset \binom{|V|}{2} \), isto é, E é alguma parte
                     das combinações dos pontos de V escolhidos dois a dois.
                 </p>
                 <p>
-                    Note que podemos transformar o nosso problema inicial em um grafo, para isso, tomamos os seguintes passos:
+                    Note que podemos transformar o nosso problema inicial em um grafo, e para isso, tomamos os seguintes passos:
                 </p>
                 <ol>
                     <li>
                         Identificamos cada pedaço de terra de Königsberg por meio de uma letra, os vértices do grafo.
                     </li>
                     <li>
-                        Se dois pedaços de terra estiverem conectados por uma ponte, ligamos às duas letras que representam esses pedaços por meio de uma aresta. 
+                        Se dois pedaços de terra estiverem conectados por uma ponte, ligamos as duas letras que representam esses pedaços por meio de uma aresta. 
                     </li>
                 </ol>
 
                 <figure class="text-center px-5">
                     <img src="./assets/Konigsberg_com_vertices.PNG" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.2 - Königsberg visto como um Grafo
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.2 - Königsberg vista como um Grafo
                     </figcaption>
                 </figure>
                 
                 <p>
-                    Da forma que foi elaborado a nossa abstração não se adequa com a nossa definição de grafo, mas é possível corrigir isso com uma <a href="#modTec" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">modificação técnica</a>. Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo, escolha um vértice para iniciar e a sequência de arestas até a conclusão do percurso.
+                    Da forma que foi elaborada, a nossa abstração não se adequa com a nossa definição de grafo, mas é possível corrigir isso com uma <a href="#modTec" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">modificação técnica</a>. Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo: escolha um vértice para iniciar e então a sequência de arestas até a conclusão do percurso.
                 </p>
                 <p>
                     Note que o vértice em que o fotógrafo se encontra está amarelo e as arestas já percorridas ficam em vermelho.
@@ -276,12 +276,12 @@
 
                 <figure class="text-center px-5">
                     <img src="./assets/Grafo_C.png" class="img-fluid mt-2 mb-4">
-                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.3 - Grafo Exemplo
+                    <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.3 - Exemplo de grafo
                     </figcaption>
                 </figure>
 
                 <p>
-                    Objetivo: Iniciando no vértice X1, prosseguir para o vértice X2 e finalizar no vértice X3. Conforme a animação abaixo:
+                    Objetivo: Iniciando no vértice X1, prossiga para o vértice X2 e finalize no vértice X3. Conforme a animação abaixo:
                 </p>
 
                 <figure class="text-center px-5">
@@ -325,7 +325,7 @@
                         <div id="resp" class="accordion-collapse collapse" aria-labelledby="Resposta" data-bs-parent="resposta">
                             <div class="accordion-body">
                                 <p>A resposta correta é apenas o caminho 3.</p>
-                                <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\). Enquanto o caminho 2 além de não passar por \(a_5\) ele também repete a aresta \(a_6\). Logo, nenhum dos dois são eulerianos.</p>
+                                <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\). Enquanto o caminho 2, além de não passar por \(a_5\), ele também repete a aresta \(a_6\). Logo, nenhum dos dois caminhos são eulerianos.</p>
                                 <figure class="text-center">
                                     <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
                                     <figcaption class="text-center text-white bg-dark ms-5 me-5">Fig.5 - Circuito Euleriano
@@ -344,7 +344,7 @@
                     Conhecendo esses conceitos, o problema inicial se resume em encontrarmos um circuito euleriano para o grafo inicial. Esse caminho existe? Se sim, como encontrá-lo? <br>
                 </p>
                 <p>    
-                    O matemático Leonhard Euler chegou a conclusão que não exite um caminho euleriano para o grafo representando Königsberg. A razão é dada pelo seguinte teorema:
+                    O matemático Leonhard Euler chegou a conclusão que não existe um caminho euleriano para o grafo representando Königsberg. A razão é dada pelo seguinte teorema:
                 </p>
 
                 <div class="container bg-secondary-subtle px-3">
@@ -352,13 +352,13 @@
                     Simplificando a linguagem formal do teorema, pode-se entendê-lo em duas partes: <br>
                     </p>
                     <ol>
-                        <li>Se um grafo possui caminhos que ligam quaisquer dois vértices e tem um caminho que percorre todas as arestas sem repetir ao menos uma delas, então cada um dos vértices que compõem o grafo possui um número de arestas que saem dele.</li>
-                        <li>Se cada um dos vértices que compõem um grafo tem o número par de arestas que saem dele e possui caminhos que ligam quais dois vértices, então existe um caminho que percorre todas as arestas sem repetir ao menos uma delas, ou seja, um circuito euleriano.</li>
+                        <li>Se um grafo possui caminhos que ligam quaisquer dois vértices e tem um caminho que percorre todas as arestas sem repetir ao menos uma delas, então cada um dos vértices que compõem o grafo possui um número par de arestas que saem dele.</li>
+                        <li>Se cada um dos vértices que compõem um grafo tem um número par de arestas que saem dele e possui caminhos que ligam quaisquer dois vértices, então existe um caminho que percorre todas as arestas sem repetir ao menos uma delas, ou seja, um circuito euleriano.</li>
                     </ol>
                 </div>
 
                 <p>
-                    No grafo inicial, todos os vértices têm grau ímpar. Pela parte 2, isso exclui a possibilidade de um circuito euleriano: não existe percurso que utilize cada aresta exatamente uma vez, independentemente do vértice de partida. Inevitavelmente, alguma aresta precisaria ser repetida.
+                    No grafo representando Königsberg, todos os vértices têm grau ímpar. Pela parte 2, isso exclui a possibilidade de um circuito euleriano: não existe percurso que utilize cada aresta exatamente uma vez, independentemente do vértice de partida. Inevitavelmente, alguma aresta precisaria ser repetida.
                 </p>
                 <p> 
                     Vale lembrar que Euler, em 1736, não estabeleceu o critério completo. Ele mostrou apenas que, se um circuito euleriano existe, então todos os vértices devem ter grau par. A recíproca (de que graus pares garantem a existência de tal circuito) permaneceu sem demonstração por mais de um século, até que Carl Hierholzer apresentou uma demonstração em 1873 (DIESTEL, 2017).
