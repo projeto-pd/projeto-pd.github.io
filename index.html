@@ -65,7 +65,7 @@
         <div class="row justify-content-center">
             <div class="p-2 col-sm-12 col-md-8 col-lg-7">
                 <p>
-                    Imagine que você é um turista fotógrafo na Prússia no século XVIII, e seu objetivo é conhecer a cidade de Königsberg e a ilha localizada rio Pregel (imagem abaixo), e para aproveitar o máximo sua viagem e não repetir as fotografias passando por uma mesma ponte duas ou mais vezes, o seguinte desafio surge: É possível passar pelas sete pontes sem passar por alguma delas mais de uma vez?
+                    Imagine que você é um turista fotógrafo na Prússia no século XVIII, e seu objetivo é conhecer a cidade de Königsberg e a ilha localizada no rio Pregel (imagem abaixo), e para aproveitar o máximo sua viagem e não repetir as fotografias passando por uma mesma ponte duas ou mais vezes, o seguinte desafio surge: É possível passar pelas sete pontes sem passar por alguma delas mais de uma vez?
                 </p>
 
                 <figure class="text-center">
@@ -78,7 +78,7 @@
                     Esse desafio pode parecer novo, mas sua solução foi elaborada alguns séculos atrás, isso aconteceu no século XVIII, quando o matemático Leonhard Euler visitou a cidade.
                 </p>
                 <p>
-                    Para compreender melhor como isso tudo aconteceu, vamos simplificar o nosso problema e reduzi-lo a um grafo, em seguida, compreenderemos melhor a solução.
+                    Para compreender melhor como tudo isso aconteceu, vamos simplificar o nosso problema e reduzi-lo a um grafo, em seguida, compreenderemos melhor a solução.
                 </p>
                 <p>
                     Mas afinal, o que é um grafo?
@@ -111,15 +111,14 @@
                 </figure>
                 
                 <p>
-                    Da forma que foi elaborada, a nossa abstração não se adequa com a nossa definição de grafo, mas é possível corrigir isso com uma <a href="#modTec" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">modificação técnica</a>. Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo: escolha um vértice para iniciar e então a sequência de arestas até a conclusão do percurso.
+                    Da forma como foi elaborada, a nossa abstração não se adequa com a nossa definição de grafo, mas é possível corrigir isso com uma <a href="#modTec" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">modificação técnica</a>. Com o grafo feito, o objetivo é: Começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo: escolha um vértice para iniciar e então a sequência de arestas até a conclusão do percurso.
                 </p>
                 <p>
                     Note que o vértice em que o fotógrafo se encontra está amarelo e as arestas já percorridas ficam em vermelho.
                 </p>
 
                 <p> Como jogar: Primeiro selecione um vértice inicial, e feito isso, clique nas arestas que deseja atravessar. As
-                    arestas em vermelho já foram atravessadas e não podem ser cruzadas novamente, e o vértice em amarelo
-                    é a região de Königsberg onde você está no momento.</p>
+                    arestas em vermelho já foram atravessadas e não podem ser cruzadas novamente, e o vértice em amarelo indica onde você está no momento</p>
 
                 <div id="containerP">
                     <button id="resetBtn">↻<br>Reiniciar</button>
@@ -271,7 +270,7 @@
                     Esse desafio parece um tanto difícil, não é? Antes de chegarmos a conclusão de Euler acerca desse problema, introduziremos alguns conceitos importantes para formular melhor a conclusão. <br>
                 </p>
                 <p>
-                    Retornando à ideia de grafo, um <b>caminho</b> em um grafo é uma sequência de vértices e arestas \(x_1, a_1, x_2, a_2, \cdots\), onde cada vértice \(x_i\) em um caminho é conectado ao seu sucessor pela aresta ai. Para exemplificar esse conceito, observe o seguinte grafo:
+                    Retornando à ideia de grafo, um <b>caminho</b> em um grafo é uma sequência de vértices e arestas \(x_1, a_1, x_2, a_2, \cdots\), onde cada vértice \(x_i\) em um caminho é conectado ao seu sucessor pela aresta \(a_i\). Para exemplificar esse conceito, observe o seguinte grafo:
                 </p>
 
                 <figure class="text-center px-5">
@@ -327,7 +326,7 @@
                              aria-labelledby="coisa" data-bs-parent="#resposta">
                             <div class="accordion-body">
                                 <p>A resposta correta é o caminho 3.</p>
-                                <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\). Enquanto o caminho 2, além de não passar por \(a_5\), ele também repete a aresta \(a_6\). Logo, nenhum dos dois caminhos são eulerianos.</p>
+                                <p>O caminho 1 não passa pelas arestas \(a_5\) e \(a_6\); já o caminho 2, além de não passar por \(a_5\), repete a aresta \(a_6\). Logo, nenhum dos dois caminhos são eulerianos.</p>
                                 <figure class="text-center">
                                     <img src="./assets/animacao_resolucao.gif" class="img-fluid mt-2 mb-4">
                                     <figcaption class="text-center text-white bg-dark ms-5 me-5">
