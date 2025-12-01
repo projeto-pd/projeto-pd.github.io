@@ -297,7 +297,9 @@
                     Caminho = \(x_1, a_1, x_2, a_2, x_3\).
                 </p>
                 <p>
-                    Um caminho que percorre todas as arestas de um grafo G, passando por cada aresta apenas uma vez, é chamado de circuito euleriano em G. Com o grafo da imagem abaixo, busquemos identificar qual deles é um circuito euleriano.
+                    Um caminho que percorre todas as arestas de um grafo G, passando por cada aresta apenas uma vez, é chamado de circuito euleriano em G. 
+                </p>
+                    <b>Exercício:</b> Com o grafo da imagem abaixo, identifique qual dos seguintes caminhos é euleriano:
                 </p>
 
                 <figure class="text-center">
@@ -339,10 +341,10 @@
                 </div>
 
                 <p>
-                    No grafo inicial, todos os vértices possuem um número ímpar de arestas que saem dele, o que significa, pela parte 2, que não existe nenhum circuito euleriano, logo, não é possível encontrar um caminho que percorra todas as arestas sem ao menos repetir uma delas, independente de qual seja o vértice inicial.
+                    No grafo inicial, todos os vértices têm grau ímpar. Pela parte 2, isso exclui a possibilidade de um circuito euleriano: não existe percurso que utilize cada aresta exatamente uma vez, independentemente do vértice de partida. Inevitavelmente, alguma aresta precisaria ser repetida.
                 </p>
                 <p> 
-                    Euler em 1736 não demonstrou o resultado completo, na realidade, ele provou apenas que a admissão de um circuito euleriano garante que todos os vértices têm um número par de arestas, e mostrar que tal condição implica a existência de um circuito euleriano foi um problema em aberto por mais de um século, até que uma demonstração por Carl Hierholzer foi publicada em 1873 (DIESTEL, 2017).
+                    Vale lembrar que Euler, em 1736, não estabeleceu o critério completo. Ele mostrou apenas que, se um circuito euleriano existe, então todos os vértices devem ter grau par. A recíproca (de que graus pares garantem a existência de tal circuito) permaneceu sem demonstração por mais de um século, até que Carl Hierholzer apresentou uma demonstração em 1873 (DIESTEL, 2017).
                 </p>
                 <p>
                     Resolvido o problema, conclui-se que o fotógrafo teve as suas intenções iniciais frustradas, haverá ao menos uma foto repetida. Por outro lado, compreendemos melhor qual era o problema das sete pontes de Königsberg, o que é um grafo e os conceitos relacionados (caminho, circuito euleriano e grafo conexo), transformamos o problema inicial em um grafo e entendemos a solução proposta por Euler. E além disso, esse problema gerou uma nova área na matemática:  a teoria dos grafos.
