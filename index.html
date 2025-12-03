@@ -113,7 +113,7 @@
                     Da forma como foi elaborada, a nossa abstração não se adequa com a nossa definição de grafo, mas é possível corrigir isso com uma <a href="#modTec" data-bs-toggle="offcanvas" aria-controls="sidebar" style="color:#066017;">modificação técnica</a>. Com o grafo feito, o objetivo é: começando em um vértice, passe por todas as arestas sem repetir nenhuma delas. Você pode tentar fazer isso no seguinte jogo interativo: escolha um vértice para iniciar e então a sequência de arestas até a conclusão do percurso.
                 </p>
                 <p>
-                    Note que o vértice em que o fotógrafo se encontra está em amarelo e as arestas já percorridas ficam em vermelho.
+                    O grafo no jogo abaixo é uma simplificação do grafo representado na figura 2. Note que o vértice em que o fotógrafo se encontra está em amarelo e as arestas já percorridas ficam em vermelho.
                 </p>
 
                 <p> Como jogar: Primeiro selecione um vértice inicial, e feito isso, clique nas arestas que deseja atravessar. As
@@ -134,19 +134,19 @@
 
                             elements: [
                                 // NÓS
-                                { data: { id: 'A' }, position: { x: 260, y: 250 } },
-                                { data: { id: 'B' }, position: { x: 260, y: 360 } },
-                                { data: { id: 'C' }, position: { x: 260, y: 140 } },
+                                { data: { id: 'B' }, position: { x: 260, y: 250 } },
+                                { data: { id: 'C' }, position: { x: 260, y: 360 } },
+                                { data: { id: 'A' }, position: { x: 260, y: 140 } },
                                 { data: { id: 'D' }, position: { x: 520, y: 250 } },
 
                                 // ARESTAS (com controle manual das curvas)
-                                { data: { id: 'a', source: 'A', target: 'B' }, classes: 'curved' },
-                                { data: { id: 'b', source: 'B', target: 'D' }, classes: 'curved' },
-                                { data: { id: 'c', source: 'A', target: 'C' }, classes: 'curved' },
-                                { data: { id: 'd', source: 'C', target: 'D' }, classes: 'curved' },
-                                { data: { id: 'e', source: 'A', target: 'D' }, classes: 'curved' },
-                                { data: { id: 'f', source: 'B', target: 'D' }, classes: 'curved' },
-                                { data: { id: 'g', source: 'C', target: 'D' }, classes: 'curved' }
+                                { data: { id: 'a', source: 'B', target: 'C' }, classes: 'curved' },
+                                { data: { id: 'b', source: 'C', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'c', source: 'B', target: 'A' }, classes: 'curved' },
+                                { data: { id: 'd', source: 'A', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'e', source: 'B', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'f', source: 'C', target: 'D' }, classes: 'curved' },
+                                { data: { id: 'g', source: 'A', target: 'D' }, classes: 'curved' }
                             ],
 
                             style: [
